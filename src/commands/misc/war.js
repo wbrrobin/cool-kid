@@ -51,7 +51,7 @@ module.exports = {
         } catch (error) {
             console.log(error);
             interaction.reply({
-                ephemeral: true,
+                flags: [MessageFlags.Ephemeral],
                 content: "Something went wrong."
             });
         }

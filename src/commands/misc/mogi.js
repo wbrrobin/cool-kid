@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, BaseClient } = require("discord.js");
+const { ApplicationCommandOptionType, BaseClient, MessageFlags } = require("discord.js");
 
 module.exports = {
     name: "mogi",
@@ -25,7 +25,7 @@ module.exports = {
             // Check if mogi exists
             if (mogiDetails === undefined) {
                 interaction.reply({
-                    ephemeral: true,
+                    flags: [MessageFlags.Ephemeral],
                     content: "Mogi does not exist."
                 });
                 return;
@@ -46,7 +46,7 @@ module.exports = {
         } catch (error) {
             console.log(error);
             interaction.reply({
-                ephemeral: true,
+                flags: [MessageFlags.Ephemeral],
                 content: "Something went wrong."
             });
         }
