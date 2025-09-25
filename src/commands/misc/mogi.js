@@ -21,6 +21,17 @@ module.exports = {
 
             const lines = lastMessage.split("\n");
             let mogiDetails = lines.find((line) => line.includes(`#${mogiNr}`));
+
+            // Check if mogi exists
+            if (mogiDetails === undefined) {
+                interaction.reply({
+                    ephemeral: true,
+                    content: "Mogi does not exist."
+                });
+                return;
+            }
+
+            // Remove last part of the message
             mogiDetails = mogiDetails.split(" - ")[0];
 
             await interaction.deferReply();
@@ -34,6 +45,10 @@ module.exports = {
                 });
         } catch (error) {
             console.log(error);
+            interaction.reply({
+                ephemeral: true,
+                content: "Something went wrong."
+            });
         }
     }
 };
