@@ -3,6 +3,7 @@ const { EmbedBuilder } = require("discord.js");
 module.exports = {
     name: "embed",
     description: "Sends an embed!",
+    deleted: true,
     callback: (client, interaction) => {
         const embed = new EmbedBuilder()
             .setTitle("Embed Title")

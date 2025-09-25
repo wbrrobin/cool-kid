@@ -3,6 +3,7 @@ const { ApplicationCommandOptionType } = require("discord.js");
 module.exports = {
     name: "add",
     description: "Adds two numbers.",
+    deleted: true,
     options: [
         {
             name: "first-number",
