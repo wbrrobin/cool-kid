@@ -5,19 +5,19 @@ module.exports = {
     description: "Creates a new war voting for a given time.",
     options: [
         {
-            name: "month",
+            name: "1_month",
             description: "Month of the war.",
             type: ApplicationCommandOptionType.Number,
             required: true
         },
         {
-            name: "day",
+            name: "2_day",
             description: "Day of the war.",
             type: ApplicationCommandOptionType.Number,
             required: true
         },
         {
-            name: "time",
+            name: "3_time",
             description: "Time of the war.",
             type: ApplicationCommandOptionType.Number,
             required: true,
@@ -30,9 +30,9 @@ module.exports = {
         }
     ],
     callback: async (client, interaction) => {
-        const day = interaction.options.get("day").value;
-        const month = interaction.options.get("month").value;
-        const hour = interaction.options.get("time").value;
+        const month = interaction.options.get("1_month").value;
+        const day = interaction.options.get("2_day").value;
+        const hour = interaction.options.get("3_time").value;
 
         const year = 2025;
 
