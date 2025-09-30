@@ -42,7 +42,7 @@ module.exports = {
             await interaction.deferReply();
             interaction.deleteReply();
             interaction.channel
-                .send(`<@&${"1396340893476196432"}> React to this if you could war <t:${date.getTime() / 1000 + 6 * 3600}:F>`)
+                .send(`<@&${"1396340893476196432"}> React to this if you could war <t:${date.getTime() / 1000 + 5 * 3600}:F>`)
                 .then(message => {
                     message.react("✅");
                     message.react("🔁");

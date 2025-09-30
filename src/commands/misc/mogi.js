@@ -1,11 +1,12 @@
 const { ApplicationCommandOptionType, BaseClient, MessageFlags } = require("discord.js");
+const getMogiDetails = require("../../utils/getMogiDetails");
 
 module.exports = {
     name: "mogi",
     description: "Creates a new mogi voting for a given mogi number.",
     options: [
         {
-            name: "number",
+            name: "mogi_id",
             description: "Number of the mogi in #lounge-sq-schedule.",
             type: ApplicationCommandOptionType.Number,
             required: true
@@ -13,26 +14,7 @@ module.exports = {
     ],
     callback: async (client, interaction) => {
         try {
-            const mogiNr = interaction.options.get("number").value;
-
-            const channel = await client.channels.fetch("1399040539109756938");
-            const messages = await channel.messages.fetch({ limit: 1 });
-            const lastMessage = messages.first().content;
-
-            const lines = lastMessage.split("\n");
-            let mogiDetails = lines.find((line) => line.includes(`#${mogiNr}`));
-
-            // Check if mogi exists
-            if (mogiDetails === undefined) {
-                interaction.reply({
-                    flags: [MessageFlags.Ephemeral],
-                    content: "Mogi does not exist."
-                });
-                return;
-            }
-
-            // Remove last part of the message
-            mogiDetails = mogiDetails.split(" - ")[0];
+            const mogiDetails = await getMogiDetails(client, interaction);
 
             await interaction.deferReply();
             interaction.deleteReply();
@@ -44,7 +26,7 @@ module.exports = {
                     message.react("❌");
                 });
         } catch (error) {
-            console.log(error);
+            console.log(`[Error mogi] ${error}`);
             interaction.reply({
                 flags: [MessageFlags.Ephemeral],
                 content: "Something went wrong."
