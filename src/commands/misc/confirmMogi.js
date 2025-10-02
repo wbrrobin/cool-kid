@@ -81,7 +81,7 @@ module.exports = {
                 autoArchiveDuration: ThreadAutoArchiveDuration.OneDay
             })
                 .then(threadChannel => {
-                    threadChannel.send(`Players: ${players.join(" ")}\nIGL: ${igl}`);
+                    threadChannel.send(`Time: ${mogiDetails.split(" ")[3]}\nPlayers: ${players.join(" ")}\nIGL: ${igl}`);
                 });
 
         } catch (error) {
