@@ -2,7 +2,7 @@ const { ActivityType } = require("discord.js");
 
 module.exports = (client) => {
     client.user.setActivity({
-        name: "Cooling my kid rn",
+        name: "Practicing Choco Mountain",
         type: ActivityType.Custom
     });
 };
