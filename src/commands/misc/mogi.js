@@ -15,6 +15,10 @@ module.exports = {
     callback: async (client, interaction) => {
         try {
             const mogiDetails = await getMogiDetails(client, interaction);
+            
+            if (mogiDetails === undefined) {
+                return;
+            }
 
             await interaction.deferReply();
             interaction.deleteReply();

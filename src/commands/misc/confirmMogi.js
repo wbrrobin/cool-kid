@@ -69,6 +69,10 @@ module.exports = {
 
             const mogiDetails = await getMogiDetails(client, interaction);
 
+            if (mogiDetails === undefined) {
+                return;
+            }
+
             // Create mogi announcement
             await interaction.deferReply();
             interaction.deleteReply();
