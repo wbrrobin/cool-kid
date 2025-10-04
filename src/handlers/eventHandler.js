@@ -12,7 +12,7 @@ module.exports = (client) => {
         // Set command priority based on filename (01xyz.py, 02abc.py, ...)
         eventFiles.sort((a, b) => a > b);
 
-        const eventName = eventFolder.split(/\\/g).pop();
+        const eventName = path.basename(eventFolder);
         
         // Execute all commands
         client.on(eventName, async (arg) => {
