@@ -1,0 +1,456 @@
+{
+    "characters": [
+        {
+            "emoji": "ParaBiddybud",
+            "name": "Para-Biddybud",
+            "id": "1424081724173844582"
+        },
+        {
+            "emoji": "Yoshi",
+            "name": "Yoshi",
+            "id": "1399384096836419714"
+        },
+        {
+            "emoji": "Toad",
+            "name": "Toad",
+            "id": "1399384092419686410"
+        },
+        {
+            "emoji": "Stingby",
+            "name": "Stingby",
+            "id": "1399384089450254437"
+        },
+        {
+            "emoji": "RockyWrench",
+            "name": "Rocky Wrench",
+            "id": "1399384078251327499"
+        },
+        {
+            "emoji": "Pianta",
+            "name": "Pianta",
+            "id": "1399384074635710595"
+        },
+        {
+            "emoji": "Peach",
+            "name": "Peach",
+            "id": "1399384070202589224"
+        },
+        {
+            "emoji": "Nabbit",
+            "name": "Nabbit",
+            "id": "1399384066284847164"
+        },
+        {
+            "emoji": "MontyMole",
+            "name": "Monty Mole",
+            "id": "1399384063810211921"
+        },
+        {
+            "emoji": "KoopaTroopa",
+            "name": "Koopa Troopa",
+            "id": "1399384060261961788"
+        },
+        {
+            "emoji": "ShyGuy",
+            "name": "Shy Guy",
+            "id": "1399384055677714453"
+        },
+        {
+            "emoji": "Dolphin",
+            "name": "Dolphin",
+            "id": "1399384052125011998"
+        },
+        {
+            "emoji": "CoinCoffer",
+            "name": "Coin Coffer",
+            "id": "1399384049444716544"
+        },
+        {
+            "emoji": "BowserJr",
+            "name": "Bowser Jr.",
+            "id": "1399384046429278282"
+        },
+        {
+            "emoji": "BabyMario",
+            "name": "Baby Mario",
+            "id": "1399384042692018228"
+        },
+        {
+            "emoji": "Wiggler",
+            "name": "Wiggler",
+            "id": "1399384037986009253"
+        },
+        {
+            "emoji": "Wario",
+            "name": "Wario",
+            "id": "1399384033875464292"
+        },
+        {
+            "emoji": "Waluigi",
+            "name": "Waluigi",
+            "id": "1399384023389962442"
+        },
+        {
+            "emoji": "Toadette",
+            "name": "Toadette",
+            "id": "1399384020139380757"
+        },
+        {
+            "emoji": "Swooper",
+            "name": "Swoop",
+            "id": "1399384016465166448"
+        },
+        {
+            "emoji": "Spike",
+            "name": "Spike",
+            "id": "1399384012878905457"
+        },
+        {
+            "emoji": "Snowman",
+            "name": "Snowman",
+            "id": "1399384010211332137"
+        },
+        {
+            "emoji": "Sidestepper",
+            "name": "Sidestepper",
+            "id": "1399384006931382272"
+        },
+        {
+            "emoji": "Rosaline",
+            "name": "Rosalina",
+            "id": "1399384003446046820"
+        },
+        {
+            "emoji": "Pokey",
+            "name": "Pokey",
+            "id": "1399384001042710631"
+        },
+        {
+            "emoji": "PiranhaPlant",
+            "name": "Piranha Plant",
+            "id": "1399383994315046972"
+        },
+        {
+            "emoji": "Penguin",
+            "name": "Penguin",
+            "id": "1399383990456156212"
+        },
+        {
+            "emoji": "Peepa",
+            "name": "Peepa",
+            "id": "1399383986266181805"
+        },
+        {
+            "emoji": "Pauline",
+            "name": "Pauline",
+            "id": "1399383982885310534"
+        },
+        {
+            "emoji": "Mario",
+            "name": "Mario",
+            "id": "1399383979588714607"
+        },
+        {
+            "emoji": "Luigi",
+            "name": "Luigi",
+            "id": "1399383977168736376"
+        },
+        {
+            "emoji": "Lakitu",
+            "name": "Lakitu",
+            "id": "1399383974077534329"
+        },
+        {
+            "emoji": "HammerBro",
+            "name": "Hammer Bro",
+            "id": "1399383970461913139"
+        },
+        {
+            "emoji": "DonkeyKong",
+            "name": "Donkey Kong",
+            "id": "1399383967483822100"
+        },
+        {
+            "emoji": "KingBoo",
+            "name": "King Boo",
+            "id": "1399383964124184656"
+        },
+        {
+            "emoji": "Goomba",
+            "name": "Goomba",
+            "id": "1399383961024593980"
+        },
+        {
+            "emoji": "FishBone",
+            "name": "Fish Bone",
+            "id": "1399383956977221803"
+        },
+        {
+            "emoji": "DryBones",
+            "name": "Dry Bones",
+            "id": "1399383954087477350"
+        },
+        {
+            "emoji": "Daisy",
+            "name": "Daisy",
+            "id": "1399383949679001781"
+        },
+        {
+            "emoji": "Cow",
+            "name": "Cow",
+            "id": "1399383938438533140"
+        },
+        {
+            "emoji": "Conkdor",
+            "name": "Conkdor",
+            "id": "1399383934411735232"
+        },
+        {
+            "emoji": "CheepCheep",
+            "name": "Cheep Cheep",
+            "id": "1399383930188337242"
+        },
+        {
+            "emoji": "CharginChuck",
+            "name": "Chargin' Chuck",
+            "id": "1399383926853734430"
+        },
+        {
+            "emoji": "Cataquack",
+            "name": "Cataquack",
+            "id": "1399383924173705236"
+        },
+        {
+            "emoji": "Bowser",
+            "name": "Bowser",
+            "id": "1399383919807299594"
+        },
+        {
+            "emoji": "Birdo",
+            "name": "Birdo",
+            "id": "1399383916766302258"
+        },
+        {
+            "emoji": "BabyRosalina",
+            "name": "Baby Rosalina",
+            "id": "1399383911661965322"
+        },
+        {
+            "emoji": "BabyPeach",
+            "name": "Baby Peach",
+            "id": "1399383907866251394"
+        },
+        {
+            "emoji": "BabyLuigi",
+            "name": "Baby Luigi",
+            "id": "1399383904162418788"
+        },
+        {
+            "emoji": "BabyDaisy",
+            "name": "Baby Daisy",
+            "id": "1399383901599699065"
+        }
+    ],
+    "vehicles": [
+        {
+            "emoji": "StandardKart",
+            "name": "Standard Kart",
+            "id": "1424099416624730122"
+        },
+        {
+            "emoji": "RallyKart",
+            "name": "Rally Kart",
+            "id": "1424099385423429632"
+        },
+        {
+            "emoji": "Plushbuggy",
+            "name": "Plushbuggy",
+            "id": "1424099371301208155"
+        },
+        {
+            "emoji": "BabyBlooper",
+            "name": "Baby Blooper",
+            "id": "1424099237922082848"
+        },
+        {
+            "emoji": "CharginTruck",
+            "name": "Chargin' Truck",
+            "id": "1424099283983925370"
+        },
+        {
+            "emoji": "ZoomBuggy",
+            "name": "Zoom Buggy",
+            "id": "1424099438997274766"
+        },
+        {
+            "emoji": "BlastronautIII",
+            "name": "Blastronaut III",
+            "id": "1424099264820281405"
+        },
+        {
+            "emoji": "ReelRacer",
+            "name": "Reel Racer",
+            "id": "1424099390062329976"
+        },
+        {
+            "emoji": "CarpetFlyer",
+            "name": "Carpet Flyer",
+            "id": "1424099279521316924"
+        },
+        {
+            "emoji": "Billdozer",
+            "name": "Billdozer",
+            "id": "1424099258738671669"
+        },
+        {
+            "emoji": "BigHorn",
+            "name": "Big Horn",
+            "id": "1424099253130760242"
+        },
+        {
+            "emoji": "HotRod",
+            "name": "Hot Rod",
+            "id": "1424099324530397265"
+        },
+        {
+            "emoji": "StellarSled",
+            "name": "Stellar Sled",
+            "id": "1424099421699969259"
+        },
+        {
+            "emoji": "RibbitRevster",
+            "name": "Ribbit Revster",
+            "id": "1424099394365427753"
+        },
+        {
+            "emoji": "MechaTrike",
+            "name": "Mecha Trike",
+            "id": "1424099362136653925"
+        },
+        {
+            "emoji": "LilDumpy",
+            "name": "Li'l Dumpy",
+            "id": "1424099343060828242"
+        },
+        {
+            "emoji": "HyperPipe",
+            "name": "Hyper Pipe",
+            "id": "1424099332784652298"
+        },
+        {
+            "emoji": "PipeFrame",
+            "name": "Pipe Frame",
+            "id": "1424099367287263433"
+        },
+        {
+            "emoji": "BiddyBuggy",
+            "name": "Biddybuggy",
+            "id": "1424099248298922084"
+        },
+        {
+            "emoji": "BDasher",
+            "name": "B Dasher",
+            "id": "1424099242992996464"
+        },
+        {
+            "emoji": "TinyTitan",
+            "name": "Tiny Titan",
+            "id": "1424099426187739356"
+        },
+        {
+            "emoji": "BumbleV",
+            "name": "Bumble V",
+            "id": "1424099274886742067"
+        },
+        {
+            "emoji": "Cloud9",
+            "name": "Cloud 9",
+            "id": "1424099293601726556"
+        },
+        {
+            "emoji": "StandardBike",
+            "name": "Standard Bike",
+            "id": "1424099411901939813"
+        },
+        {
+            "emoji": "RallyBike",
+            "name": "Rally Bike",
+            "id": "1424099375893971015"
+        },
+        {
+            "emoji": "MachRocket",
+            "name": "Mach Rocket",
+            "id": "1424099356537262161"
+        },
+        {
+            "emoji": "FinTwin",
+            "name": "Fin Twin",
+            "id": "1424099314283712634"
+        },
+        {
+            "emoji": "CuteScoot",
+            "name": "Cute Scoot",
+            "id": "1424099298919973006"
+        },
+        {
+            "emoji": "WTwinChopper",
+            "name": "W-Twin Chopper",
+            "id": "1424099434597449738"
+        },
+        {
+            "emoji": "LobsterRoller",
+            "name": "Lobster Roller",
+            "id": "1424099347930550373"
+        },
+        {
+            "emoji": "TuneThumper",
+            "name": "Tune Thumper",
+            "id": "1424099430172463186"
+        },
+        {
+            "emoji": "LocoMoto",
+            "name": "Loco Moto",
+            "id": "1424099352317661204"
+        },
+        {
+            "emoji": "ROBHOG",
+            "name": "R.O.B. H.O.G.",
+            "id": "1424099405166022747"
+        },
+        {
+            "emoji": "DolphinDasher",
+            "name": "Dolphin Dasher",
+            "id": "1424099303525191792"
+        },
+        {
+            "emoji": "BowserBruiser",
+            "name": "Bowser Bruiser",
+            "id": "1424099269907845203"
+        },
+        {
+            "emoji": "FunkyDorrie",
+            "name": "Funky Dorrie",
+            "id": "1424099319190913224"
+        },
+        {
+            "emoji": "RallyGator",
+            "name": "Rally Gator",
+            "id": "1424099380834603189"
+        },
+        {
+            "emoji": "DreadSled",
+            "name": "Dread Sled",
+            "id": "1424099308981981285"
+        },
+        {
+            "emoji": "JunkyardHog",
+            "name": "Junkyard Hog",
+            "id": "1424099337042133135"
+        },
+        {
+            "emoji": "RoadsterRoyale",
+            "name": "Roadster Royale",
+            "id": "1424099399679610920"
+        }
+    ]
+}
