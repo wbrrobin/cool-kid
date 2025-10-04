@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, ThreadAutoArchiveDuration } = require("discord.js");
+const { ApplicationCommandOptionType, ThreadAutoArchiveDuration, MessageFlags } = require("discord.js");
 const getMogiDetails = require("../../utils/getMogiDetails");
 
 module.exports = {

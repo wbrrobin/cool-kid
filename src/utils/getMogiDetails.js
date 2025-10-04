@@ -1,3 +1,5 @@
+const { MessageFlags } = require("discord.js");
+
 module.exports = async (client, interaction) => {
     const mogiNr = interaction.options.get("mogi_id").value;
 

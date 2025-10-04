@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, BaseClient, MessageFlags } = require("discord.js");
+const { ApplicationCommandOptionType, MessageFlags } = require("discord.js");
 const getMogiDetails = require("../../utils/getMogiDetails");
 
 module.exports = {

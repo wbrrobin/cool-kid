@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType } = require("discord.js");
+const { ApplicationCommandOptionType, MessageFlags } = require("discord.js");
 
 module.exports = {
     name: "war",
