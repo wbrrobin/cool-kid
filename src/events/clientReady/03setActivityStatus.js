@@ -6,7 +6,7 @@ module.exports = (client) => {
         type: ActivityType.Custom
     });
 
-    client.applications.edit({
+    client.application.edit({
         description: "For more info, check out https://github.com/wbrrobin/cool-kid."
     });
 };
