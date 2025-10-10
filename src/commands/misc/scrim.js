@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, MessageFlags } = require("discord.js");
+const { ApplicationCommandOptionType, MessageFlags, EmbedBuilder } = require("discord.js");
 
 module.exports = {
     name: "scrim",
@@ -41,8 +41,12 @@ module.exports = {
 
             await interaction.deferReply();
             interaction.deleteReply();
+
+            const embed = new EmbedBuilder()
+                .setTitle(`React to this if you could internal scrim 12p 6v6 at <t:${date.getTime() / 1000 + 5 * 3600}:F>`)
+                .setColor("Purple");
             interaction.channel
-                .send(`<@&${"1396340893476196432"}> React to this if you could internal scrim 12p 6v6 at <t:${date.getTime() / 1000 + 5 * 3600}:F>`)
+                .send({ content: `<@&${"1396340893476196432"}>`, embeds: [embed] })
                 .then(message => {
                     message.react("✅");
                     message.react("🔁");

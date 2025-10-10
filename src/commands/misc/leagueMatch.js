@@ -1,4 +1,4 @@
-const { ApplicationCommandOptionType, MessageFlags } = require("discord.js");
+const { ApplicationCommandOptionType, MessageFlags, EmbedBuilder } = require("discord.js");
 
 module.exports = {
     name: "league-match",
@@ -49,8 +49,11 @@ module.exports = {
 
             await interaction.deferReply();
             interaction.deleteReply();
+            const embed = new EmbedBuilder()
+                .setTitle(`React to this if you could play the league match against **${enemy}** at <t:${date.getTime() / 1000 + 5 * 3600}:F>`)
+                .setColor("Green");
             interaction.channel
-                .send(`<@&${"1396340893476196432"}> React to this if you could play the league match against **${enemy}** at <t:${date.getTime() / 1000 + 5 * 3600}:F>`)
+                .send({ content: `<@&${"1396340893476196432"}>`, embeds: [embed] })
                 .then(message => {
                     message.react("✅");
                     message.react("🔁");
