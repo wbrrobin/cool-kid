@@ -1,4 +1,5 @@
-const { ApplicationCommandOptionType, MessageFlags, EmbedBuilder } = require("discord.js");
+const { ApplicationCommandOptionType } = require("discord.js");
+const createVoting = require("../../utils/createVoting.js");
 const getMogiDetails = require("../../utils/getMogiDetails");
 
 module.exports = {
@@ -13,31 +14,25 @@ module.exports = {
         }
     ],
     callback: async (client, interaction) => {
-        try {
-            const mogiDetails = await getMogiDetails(client, interaction);
+        const mogiDetails = await getMogiDetails(client, interaction);
 
-            if (mogiDetails === undefined) {
-                return;
-            }
-
-            await interaction.deferReply();
-            interaction.deleteReply();
-            const embed = new EmbedBuilder()
-                .setTitle(`React to this if you could mogi ${mogiDetails}`)
-                .setColor("Yellow");
-            interaction.channel
-                .send({ content: `<@&${"1396340893476196432"}>`, embeds: [embed] })
-                .then(message => {
-                    message.react("✅");
-                    message.react("🔁");
-                    message.react("❌");
-                });
-        } catch (error) {
-            console.log(`[Error mogi] ${error}`);
-            interaction.reply({
-                flags: [MessageFlags.Ephemeral],
-                content: "Something went wrong."
-            });
+        if (mogiDetails === undefined) {
+            return;
         }
+
+        // Get general info and date (UNIX time)
+        const detailParts = mogiDetails.split(" <t:");
+        const generalInfo = detailParts[0]
+            .replace(":", "")
+            .replace("`", "")
+            .replace("`", "")
+            .replace("**", "")
+            .replace("**", "");
+        const timePart = parseInt(detailParts[1].replace(":F>", ""));
+
+        const startDate = new Date(timePart * 1000);
+        const endDate = new Date((timePart + 3600) * 1000);
+
+        createVoting(client, interaction, `mogi ${mogiDetails}`, "Yellow", `Mogi ${generalInfo}`, startDate, endDate);
     }
 };

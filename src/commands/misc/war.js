@@ -1,4 +1,5 @@
-const { ApplicationCommandOptionType, MessageFlags, EmbedBuilder } = require("discord.js");
+const { ApplicationCommandOptionType } = require("discord.js");
+const createVoting = require("../../utils/createVoting.js");
 
 module.exports = {
     name: "war",
@@ -29,35 +30,7 @@ module.exports = {
             })
         }
     ],
-    callback: async (client, interaction) => {
-        try {
-            const month = interaction.options.get("1_month").value;
-            const day = interaction.options.get("2_day").value;
-            const hour = interaction.options.get("3_time").value;
-
-            const year = 2025;
-
-            const date = new Date(Date.UTC(year, month - 1, day, hour));
-
-            await interaction.deferReply();
-            interaction.deleteReply();
-
-            const embed = new EmbedBuilder()
-                .setTitle(`React to this if you could war <t:${date.getTime() / 1000 + 5 * 3600}:F>`)
-                .setColor("Red");
-            interaction.channel
-                .send({ content: `<@&${"1396340893476196432"}>`, embeds: [embed] })
-                .then(message => {
-                    message.react("✅");
-                    message.react("🔁");
-                    message.react("❌");
-                });
-        } catch (error) {
-            console.log(error);
-            interaction.reply({
-                flags: [MessageFlags.Ephemeral],
-                content: "Something went wrong."
-            });
-        }
+    callback: (client, interaction) => {
+        createVoting(client, interaction, "war", "Red", "War");
     }
 };
