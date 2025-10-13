@@ -22,7 +22,8 @@ module.exports = {
 
         // Get general info and date (UNIX time)
         const detailParts = mogiDetails.split(" <t:");
-        const generalInfo = detailParts[0]
+        const generalInfo = detailParts[0];
+        const generalInfoWithoutDate = generalInfo
             .replace(":", "")
             .replace("`", "")
             .replace("`", "")
@@ -33,6 +34,6 @@ module.exports = {
         const startDate = new Date(timePart * 1000);
         const endDate = new Date((timePart + 3600) * 1000);
 
-        createVoting(client, interaction, `mogi ${mogiDetails}`, "Yellow", `Mogi ${generalInfo}`, startDate, endDate);
+        createVoting(client, interaction, `mogi ${generalInfo}`, "Yellow", `Mogi ${generalInfoWithoutDate}`, startDate, endDate);
     }
 };

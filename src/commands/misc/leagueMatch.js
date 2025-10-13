@@ -37,6 +37,8 @@ module.exports = {
         }
     ],
     callback: (client, interaction) => {
-        createVoting(client, interaction, `play the league match against ${enemy}`, "Green", `League match against ${enemy}`);
+        const enemy = interaction.options.get("enemy").value;
+
+        createVoting(client, interaction, `play the league match against **${enemy}**`, "Green", `League match against ${enemy}`);
     }
 };
