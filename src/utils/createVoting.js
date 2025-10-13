@@ -1,5 +1,5 @@
 const { MessageFlags, EmbedBuilder, GuildScheduledEventManager, GuildScheduledEventPrivacyLevel, GuildScheduledEventEntityType } = require("discord.js");
-const { guildId, vcId } = require("../../config.json");
+const { guildId } = require("../../config.json");
 
 module.exports = async (client, interaction, message, color, eventName, startDate = null, endDate = null) => {
     try {
@@ -30,15 +30,14 @@ module.exports = async (client, interaction, message, color, eventName, startDat
 
         // Create event
         const guild = client.guilds.cache.find(guild => guild.id === guildId);
-        const channel = guild.channels.cache.find(channel => channel.id === vcId);
         const eventManager = new GuildScheduledEventManager(guild);
         eventManager.create({
             name: eventName,
             scheduledStartTime: startDate,
             scheduledEndTime: endDate,
             privacyLevel: GuildScheduledEventPrivacyLevel.GuildOnly,
-            entityType: GuildScheduledEventEntityType.Voice,
-            channel: channel
+            entityType: GuildScheduledEventEntityType.External,
+            entityMetadata: { location: "Anywhere" }
         });
     } catch (error) {
         console.log(error);
