@@ -2,9 +2,25 @@ const { devs, testServer } = require("../../../config.json");
 const getLocalCommands = require("../../utils/getLocalCommands");
 
 module.exports = async (client, interaction) => {
-    if (!interaction.isChatInputCommand()) return;
-
     const localCommands = getLocalCommands();
+
+    // Autocomplete handler
+    if (interaction.isAutocomplete()) {
+        const commandObject = localCommands.find(
+            (cmd) => cmd.name === interaction.commandName
+        );
+
+        if (!commandObject || !commandObject.autocomplete) return;
+
+        try {
+            await commandObject.autocomplete(client, interaction);
+        } catch (error) {
+            console.error(`Error in autocomplete for ${commandObject.name}:`, error);
+        }
+        return;
+    }
+
+    if (!interaction.isChatInputCommand()) return;
 
     try {
         const commandObject = localCommands.find(
