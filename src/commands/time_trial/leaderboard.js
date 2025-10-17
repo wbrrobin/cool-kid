@@ -47,7 +47,7 @@ module.exports = {
             "Cheep Cheep Falls", "Starview Peak", "Whistlestop Summit", "Bowser's Castle", "Shy Guy Bazaar", "Choco Mountain",
             "Dry Bones Burnout", "Crown City", "Peach Beach", "Toad's Factory", "Rainbow Road", "Peach Stadium", "Moo Moo Meadows",
             "Mario Circuit", "Dandelion Depths", "Boo Cinema", "Acorn Heights", "Wario Stadium", "Wario Shipyard", "Sky-High Sundae",
-            "Koopa Troopa Beach", "DK Spaceport", "DK Pass", "Desert Hills"
+            "Koopa Troopa Beach", "DK Spaceport", "DK Pass", "Desert Hills", "Dino Dino Jungle"
         ];
 
         const filtered = tracks
