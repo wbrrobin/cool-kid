@@ -14,4 +14,6 @@ Discord bot for making the competitive Mario Kart World experience more enjoyabl
 - `random-combo`: Generates a random combination of character + vehicle (2000 combinations possible).
 
 ### Time trial stats
-Coming soon.
+- `save-time-trial`: Adds/updates a time trial to a given track. Default category: _Shrooms_. Also possible: _No Shrooms_.
+- `get-records`: Returns all saved time trial records of the command user. Sorted by track and category.
+- `leaderboard`: Generates a leaderboard for all time trial records of a given track. Default category: _Shrooms_. Also possible: _No Shrooms_.
