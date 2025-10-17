@@ -1,5 +1,5 @@
 const { ApplicationCommandOptionType } = require("discord.js");
-const initDatabase = require("../../../data/db.js");
+const db = require("../../../data/db.js");
 
 module.exports = {
     name: "leaderboard",
@@ -26,13 +26,11 @@ module.exports = {
         const track = interaction.options.getString("track");
         const category = interaction.options.getString("category") || "Shrooms";
 
-        const db = await initDatabase();
-
-        const rows = await db.all(`
+        const rows = db.prepare(`
             SELECT user_id, time_ms FROM time_trials
             WHERE track = ? AND category = ?
             ORDER BY time_ms ASC
-        `, track, category);
+        `).all(track, category);
 
         if (rows.length === 0) {
             return interaction.reply(`Found no records for **${track} (${category})**.`);

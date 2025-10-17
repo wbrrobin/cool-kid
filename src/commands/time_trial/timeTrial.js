@@ -1,5 +1,5 @@
 const { ApplicationCommandOptionType, MessageFlags } = require("discord.js");
-const initDatabase = require("../../../data/db.js");
+const db = require("../../../data/db.js");
 
 module.exports = {
     name: "save-time-trial",
@@ -39,14 +39,14 @@ module.exports = {
             return interaction.reply({ content: "❌ Illegal time format. Example: `1:23.456`", flags: [MessageFlags.Ephemeral] });
         }
 
-        const db = await initDatabase(); // DB async öffnen
-
-        await db.run(`
+        const stmt = db.prepare(`
             INSERT INTO time_trials (user_id, username, track, category, time_ms)
             VALUES (?, ?, ?, ?, ?)
             ON CONFLICT(user_id, track, category)
             DO UPDATE SET time_ms = excluded.time_ms, updated_at = CURRENT_TIMESTAMP
-        `, interaction.user.id, interaction.user.username, track, category, timeMs);
+        `);
+
+        stmt.run(interaction.user.id, interaction.user.username, track, category, timeMs);
 
         await interaction.reply(`✅ Saved time for **${track} (${category})**: ${time}`);
     },

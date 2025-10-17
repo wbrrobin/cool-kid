@@ -1,16 +1,14 @@
-const initDatabase = require("../../../data/db.js");
+const db = require("../../../data/db.js");
 
 module.exports = {
     name: "get-records",
     description: "Fetches all your time trial records.",
     callback: async (client, interaction) => {
-        const db = await initDatabase();
-
-        const rows = await db.all(`
+        const rows = db.prepare(`
             SELECT track, category, time_ms FROM time_trials
             WHERE user_id = ?
             ORDER BY track ASC, category ASC
-        `, interaction.user.id);
+        `).all(interaction.user.id);
 
         if (rows.length === 0) {
             return interaction.reply("You have no time trial records.");
