@@ -1,4 +1,4 @@
-const { Client, IntentsBitField } = require('discord.js');
+const { Client, IntentsBitField, ActivityType } = require('discord.js');
 const eventHandler = require("./handlers/eventHandler");
 const { token } = require("../config.json");
 
@@ -10,7 +10,13 @@ const client = new Client({
         IntentsBitField.Flags.GuildMessages,
         IntentsBitField.Flags.GuildMessageReactions,
         IntentsBitField.Flags.MessageContent
-    ]
+    ],
+    presence: {
+        activities: [{
+            name: "Proud to be a cool kid 💓",
+            type: ActivityType.Custom
+        }]
+    }
 });
 
 // Handle all events
