@@ -2,24 +2,24 @@ const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
 
 module.exports = {
-    name: "scrim",
-    description: "Creates a new scrim voting for a given time.",
+    name: "vod-review",
+    description: "Creates a new VOD review voting for a given time.",
     options: [
         {
             name: "1_month",
-            description: "Month of the scrim.",
+            description: "Month of the VOD review.",
             type: ApplicationCommandOptionType.Number,
             required: true
         },
         {
             name: "2_day",
-            description: "Day of the scrim.",
+            description: "Day of the VOD review.",
             type: ApplicationCommandOptionType.Number,
             required: true
         },
         {
             name: "3_time",
-            description: "Time of the scrim. (bbs timezone lol)",
+            description: "Time of the VOD review. (bbs timezone lol)",
             type: ApplicationCommandOptionType.Number,
             required: true,
             choices: Array.from({ length: 24 }, (_, i) => {
@@ -31,6 +31,6 @@ module.exports = {
         }
     ],
     callback: (client, interaction) => {
-        createVoting(client, interaction, "internal scrim 12p 6v6", "Purple", "Internal scrim 12p 6v6", null, null, false);
+        createVoting(client, interaction, "VOD review", "Aqua", "VOD review", null, null, false);
     }
 };

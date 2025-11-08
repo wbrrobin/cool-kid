@@ -1,7 +1,7 @@
 const { MessageFlags, EmbedBuilder, GuildScheduledEventManager, GuildScheduledEventPrivacyLevel, GuildScheduledEventEntityType } = require("discord.js");
 const { guildId } = require("../../config.json");
 
-module.exports = async (client, interaction, message, color, eventName, startDate = null, endDate = null) => {
+module.exports = async (client, interaction, message, color, eventName, startDate = null, endDate = null, allowSub = true) => {
     try {
         const year = 2025;
 
@@ -9,8 +9,8 @@ module.exports = async (client, interaction, message, color, eventName, startDat
             const month = interaction.options.get("1_month").value;
             const day = interaction.options.get("2_day").value;
             const hour = interaction.options.get("3_time").value;
-            startDate = new Date(Date.UTC(year, month - 1, day, hour + 5));
-            endDate = new Date(Date.UTC(year, month - 1, day, hour + 6));
+            startDate = new Date(Date.UTC(year, month - 1, day, hour + 4));
+            endDate = new Date(Date.UTC(year, month - 1, day, hour + 5));
         }
 
         await interaction.deferReply();
@@ -24,7 +24,9 @@ module.exports = async (client, interaction, message, color, eventName, startDat
             .send({ content: `<@&${"1396340893476196432"}>`, embeds: [embed] })
             .then(message => {
                 message.react("✅");
-                message.react("🔁");
+                if (allowSub) {
+                    message.react("🔁");
+                }
                 message.react("❌");
             });
 
