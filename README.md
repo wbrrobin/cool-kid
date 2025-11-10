@@ -8,7 +8,7 @@ Discord bot for making the competitive Mario Kart World experience more enjoyabl
 - `war`: Creates a war voting with options _can_ (✅), _can sub_ (🔁) and _can't_ (❌) for a given date.
 - `league-match`: Creates a voting for a league match against a given team with options _can_ (✅), _can sub_ (🔁) and _can't_ (❌) for a given date.
 - `scrim`: Creates a voting for an internal scrim 12p 6v6 with options _can_ (✅) and _can't_ (❌) for a given date.
-- `vod-review`: Creates a voting for an VOD review with options _can_ (✅) and _can't_ (❌) for a given date.
+- `vod-review`: Creates a voting for a VOD review with options _can_ (✅) and _can't_ (❌) for a given date.
 - `confirm-mogi`: Creates an announcement confirming who plays in a squad mogi for a given mogi #number. Also creates a thread for the squad.
 
 ### Time trial stats
