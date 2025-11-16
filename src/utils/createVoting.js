@@ -1,7 +1,7 @@
 const { MessageFlags, EmbedBuilder, GuildScheduledEventManager, GuildScheduledEventPrivacyLevel, GuildScheduledEventEntityType } = require("discord.js");
 const { guildId } = require("../../config.json");
 
-module.exports = async (client, interaction, message, color, eventName, startDate = null, endDate = null, allowSub = true) => {
+module.exports = async (client, interaction, message, color, eventName, startDate = null, endDate = null, allowSub = true, createEvent = true) => {
     try {
         const year = 2025;
 
@@ -9,8 +9,8 @@ module.exports = async (client, interaction, message, color, eventName, startDat
             const month = interaction.options.get("1_month").value;
             const day = interaction.options.get("2_day").value;
             const hour = interaction.options.get("3_time").value;
-            startDate = new Date(Date.UTC(year, month - 1, day, hour + 4));
-            endDate = new Date(Date.UTC(year, month - 1, day, hour + 5));
+            startDate = new Date(Date.UTC(year, month - 1, day, hour));
+            endDate = new Date(Date.UTC(year, month - 1, day, hour + 1));
         }
 
         await interaction.deferReply();
@@ -20,8 +20,10 @@ module.exports = async (client, interaction, message, color, eventName, startDat
         const embed = new EmbedBuilder()
             .setTitle(`React to this if you could ${message} <t:${startDate.getTime() / 1000}:F>`)
             .setColor(color);
+
+        const roleName = message != "MARIO PARTY" ? "1396340893476196432" : "1437829508395962429"
         interaction.channel
-            .send({ content: `<@&${"1396340893476196432"}>`, embeds: [embed] })
+            .send({ content: `<@&${roleName}>`, embeds: [embed] })
             .then(message => {
                 message.react("✅");
                 if (allowSub) {
@@ -31,6 +33,7 @@ module.exports = async (client, interaction, message, color, eventName, startDat
             });
 
         // Create event
+        if (!createEvent) return;
         const guild = client.guilds.cache.find(guild => guild.id === guildId);
         const eventManager = new GuildScheduledEventManager(guild);
         eventManager.create({

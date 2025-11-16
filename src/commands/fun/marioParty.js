@@ -2,43 +2,35 @@ const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
 
 module.exports = {
-    name: "league-match",
-    description: "Creates a new league match voting for a given time.",
+    name: "mario-party",
+    description: "Creates a new mario party voting for a given time.",
     options: [
         {
-            name: "enemy",
-            description: "Enemy clan name.",
-            type: ApplicationCommandOptionType.String,
-            required: true
-        },
-        {
             name: "1_month",
-            description: "Month of the match.",
+            description: "Month of the party.",
             type: ApplicationCommandOptionType.Number,
             required: true
         },
         {
             name: "2_day",
-            description: "Day of the match.",
+            description: "Day of the party.",
             type: ApplicationCommandOptionType.Number,
             required: true
         },
         {
             name: "3_time",
-            description: "Time of the match. (bbs timezone lol)",
+            description: "Time of the party. UTC timezone!!",
             type: ApplicationCommandOptionType.Number,
             required: true,
             choices: Array.from({ length: 24 }, (_, i) => {
                 const period = i < 12 ? "AM" : "PM";
                 let hour = i % 12;
                 hour = hour === 0 ? 12 : hour;
-                return { name: `${hour} ${period}`, value: i + 4 };
+                return { name: `${hour} ${period}`, value: i };
             })
         }
     ],
     callback: (client, interaction) => {
-        const enemy = interaction.options.get("enemy").value;
-
-        createVoting(client, interaction, `play the league match against **${enemy}**`, "Green", `League match against ${enemy}`);
+        createVoting(client, interaction, "MARIO PARTY", "DarkVividPink", null, null, null, false, false);
     }
 };

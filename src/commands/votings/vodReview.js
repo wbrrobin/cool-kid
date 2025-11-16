@@ -26,7 +26,7 @@ module.exports = {
                 const period = i < 12 ? "AM" : "PM";
                 let hour = i % 12;
                 hour = hour === 0 ? 12 : hour;
-                return { name: `${hour} ${period}`, value: i };
+                return { name: `${hour} ${period}`, value: i + 4 };
             })
         }
     ],
