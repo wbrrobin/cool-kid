@@ -30,7 +30,7 @@ module.exports = {
         }
     ],
     callback: (client, interaction) => {
-        const year = 2025;
+        const year = 2026;
 
         const month = interaction.options.get("1_month").value;
         const day = interaction.options.get("2_day").value;

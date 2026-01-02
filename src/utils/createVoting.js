@@ -3,7 +3,7 @@ const { guildId } = require("../../config.json");
 
 module.exports = async (client, interaction, message, color, eventName, startDate = null, endDate = null, allowSub = true, createEvent = true) => {
     try {
-        const year = 2025;
+        const year = 2026;
 
         if (!startDate && !endDate) {
             const month = interaction.options.get("1_month").value;
