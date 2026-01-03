@@ -1,7 +1,7 @@
 const { MessageFlags, EmbedBuilder, GuildScheduledEventManager, GuildScheduledEventPrivacyLevel, GuildScheduledEventEntityType } = require("discord.js");
 const { guildId } = require("../../config.json");
 
-module.exports = async (client, interaction, message, color, eventName, startDate = null, endDate = null, allowSub = true, createEvent = true) => {
+module.exports = async (client, interaction, message, roles, color, eventName, startDate = null, endDate = null, allowSub = true, createEvent = true) => {
     try {
         const year = 2026;
 
@@ -21,9 +21,8 @@ module.exports = async (client, interaction, message, color, eventName, startDat
             .setTitle(`React to this if you could ${message} <t:${startDate.getTime() / 1000}:F>`)
             .setColor(color);
 
-        const roleName = message != "MARIO PARTY" ? "1396340893476196432" : "1437829508395962429"
         interaction.channel
-            .send({ content: `<@&${roleName}>`, embeds: [embed] })
+            .send({ content: roles.map(role => `<@&${role}>`).join(" "), embeds: [embed] })
             .then(message => {
                 message.react("✅");
                 if (allowSub) {

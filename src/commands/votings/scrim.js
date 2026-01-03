@@ -1,5 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
+const { ckRoleId } = require("../../../config.json");
 
 module.exports = {
     name: "scrim",
@@ -31,6 +32,6 @@ module.exports = {
         }
     ],
     callback: (client, interaction) => {
-        createVoting(client, interaction, "internal scrim 12p 6v6", "Purple", "Internal scrim 12p 6v6", null, null, false);
+        createVoting(client, interaction, "internal scrim 12p 6v6", [ckRoleId], "Purple", "Internal scrim 12p 6v6", null, null, false);
     }
 };

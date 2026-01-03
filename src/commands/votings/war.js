@@ -1,5 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
+const { ckRoleId, ckTrialRoleId } = require("../../../config.json");
 
 module.exports = {
     name: "war",
@@ -31,6 +32,6 @@ module.exports = {
         }
     ],
     callback: (client, interaction) => {
-        createVoting(client, interaction, "war", "Red", "War");
+        createVoting(client, interaction, "war", [ckRoleId, ckTrialRoleId], "Red", "War");
     }
 };

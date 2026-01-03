@@ -1,5 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
+const { marioPartyRoleId } = require("../../../config.json");
 
 module.exports = {
     name: "mario-party",
@@ -31,6 +32,6 @@ module.exports = {
         }
     ],
     callback: (client, interaction) => {
-        createVoting(client, interaction, "MARIO PARTY", "DarkVividPink", null, null, null, false, false);
+        createVoting(client, interaction, "MARIO PARTY", [marioPartyRoleId], "DarkVividPink", null, null, null, false, false);
     }
 };

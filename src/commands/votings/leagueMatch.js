@@ -1,5 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
+const { ckRoleId } = require("../../../config.json");
 
 module.exports = {
     name: "league-match",
@@ -39,6 +40,6 @@ module.exports = {
     callback: (client, interaction) => {
         const enemy = interaction.options.get("enemy").value;
 
-        createVoting(client, interaction, `play the league match against **${enemy}**`, "Green", `League match against ${enemy}`);
+        createVoting(client, interaction, `play the league match against **${enemy}**`, [ckRoleId], "Green", `League match against ${enemy}`);
     }
 };

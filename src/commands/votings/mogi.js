@@ -1,6 +1,7 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
 const getMogiDetails = require("../../utils/getMogiDetails");
+const { ckRoleId } = require("../../../config.json");
 
 module.exports = {
     name: "mogi",
@@ -34,6 +35,6 @@ module.exports = {
         const startDate = new Date(timePart * 1000);
         const endDate = new Date((timePart + 3600) * 1000);
 
-        createVoting(client, interaction, `mogi ${generalInfo}`, "Yellow", `Mogi ${generalInfoWithoutDate}`, startDate, endDate);
+        createVoting(client, interaction, `mogi ${generalInfo}`, [ckRoleId], "Yellow", `Mogi ${generalInfoWithoutDate}`, startDate, endDate);
     }
 };
