@@ -16,7 +16,7 @@ module.exports = {
     ],
     callback: async (client, interaction) => {
         const mogiDetails = await getMogiDetails(client, interaction);
-
+        
         if (mogiDetails === undefined) {
             return;
         }
