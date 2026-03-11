@@ -32,6 +32,6 @@ module.exports = {
         }
     ],
     callback: (client, interaction) => {
-        createVoting(client, interaction, "war", [ckRoleId, ckTrialRoleId], "Red", "War", null, null, true, false);
+        createVoting(client, interaction, "war", [ckRoleId, ckTrialRoleId], "Red", "War");
     }
 };
