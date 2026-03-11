@@ -1,6 +1,6 @@
 const { ApplicationCommandOptionType } = require("discord.js");
 const createVoting = require("../../utils/createVoting.js");
-const { ckRoleId } = require("../../../config.json");
+const { ckRoleId, timeZoneDiff } = require("../../../config.json");
 
 module.exports = {
     name: "vod-review",
@@ -20,14 +20,14 @@ module.exports = {
         },
         {
             name: "3_time",
-            description: "Time of the VOD review. (bbs timezone lol)",
+            description: "Time of the VOD review. (Central Time)",
             type: ApplicationCommandOptionType.Number,
             required: true,
             choices: Array.from({ length: 24 }, (_, i) => {
                 const period = i < 12 ? "AM" : "PM";
                 let hour = i % 12;
                 hour = hour === 0 ? 12 : hour;
-                return { name: `${hour} ${period}`, value: i + 4 };
+                return { name: `${hour} ${period}`, value: i + timeZoneDiff };
             })
         }
     ],
