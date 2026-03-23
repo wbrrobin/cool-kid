@@ -13,7 +13,7 @@ const client = new Client({
     ],
     presence: {
         activities: [{
-            name: "CK first division 7 champions swept the oldest team in ATL history",
+            name: "Knocking out the competition",
             type: ActivityType.Custom
         }]
     }

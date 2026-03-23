@@ -8,9 +8,10 @@ module.exports = async (client, interaction, message, roles, color, eventName, s
         if (!startDate && !endDate) {
             const month = interaction.options.get("1_month").value;
             const day = interaction.options.get("2_day").value;
-            const hour = interaction.options.get("3_time").value;
-            startDate = new Date(Date.UTC(year, month - 1, day, hour));
-            endDate = new Date(Date.UTC(year, month - 1, day, hour + 1));
+            const hour = interaction.options.get("3_hour").value;
+            const minutes = interaction.options.get("4_minutes") ? interaction.options.get("4_minutes").value : 0;
+            startDate = new Date(Date.UTC(year, month - 1, day, hour, minutes));
+            endDate = new Date(Date.UTC(year, month - 1, day, hour + 1, minutes));
         }
 
         await interaction.deferReply();

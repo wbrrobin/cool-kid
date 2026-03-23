@@ -25,8 +25,8 @@ module.exports = {
             required: true
         },
         {
-            name: "3_time",
-            description: "Time of the match. (Central Time)",
+            name: "3_hour",
+            description: "Hour of the match. (Central Time)",
             type: ApplicationCommandOptionType.Number,
             required: true,
             choices: Array.from({ length: 24 }, (_, i) => {
@@ -35,6 +35,12 @@ module.exports = {
                 hour = hour === 0 ? 12 : hour;
                 return { name: `${hour} ${period}`, value: i + timeZoneDiff };
             })
+        },
+        {
+            name: "4_minutes",
+            description: "Minutes of the match hour.",
+            type: ApplicationCommandOptionType.Integer,
+            required: false
         }
     ],
     callback: (client, interaction) => {

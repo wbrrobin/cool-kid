@@ -18,8 +18,8 @@ module.exports = {
             required: true
         },
         {
-            name: "3_time",
-            description: "Time. (Central Time)",
+            name: "3_hour",
+            description: "Hour. (Central Time)",
             type: ApplicationCommandOptionType.Number,
             required: true,
             choices: Array.from({ length: 24 }, (_, i) => {
@@ -28,6 +28,12 @@ module.exports = {
                 hour = hour === 0 ? 12 : hour;
                 return { name: `${hour} ${period}`, value: i + timeZoneDiff };
             })
+        },
+        {
+            name: "4_minutes",
+            description: "Minutes of the hour.",
+            type: ApplicationCommandOptionType.Integer,
+            required: false
         }
     ],
     callback: (client, interaction) => {
@@ -35,8 +41,9 @@ module.exports = {
 
         const month = interaction.options.get("1_month").value;
         const day = interaction.options.get("2_day").value;
-        const hour = interaction.options.get("3_time").value;
-        const date = new Date(Date.UTC(year, month - 1, day, hour));
+        const hour = interaction.options.get("3_hour").value;
+        const minutes = interaction.options.get("4_minutes") ? interaction.options.get("4_minutes").value : 0;
+        const date = new Date(Date.UTC(year, month - 1, day, hour, minutes));
 
         const embed = new EmbedBuilder()
             .setTitle(`<t:${date.getTime() / 1000}:F>`);
